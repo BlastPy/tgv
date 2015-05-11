@@ -14,11 +14,9 @@ def index(request):
       
     return render(request,'rozdils.html',context)
 
-def test_view(request):
-    return render(request, 'second.html', {})
 
 def stats(request,is_main):
-    stats = Stats.objects.filter(main_is=is_main)
+    stats = Stats.objects.all().filter(main_is_id=is_main)
     context = {'stats':stats}
 
-    return render(request,'stats.html',{})
+    return render(request,'stats.html',context)

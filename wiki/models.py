@@ -27,7 +27,7 @@ class Rozdil(models.Model):
     is_main = models.BooleanField(default=1,verbose_name="Головний ?")
 
     def get_absolute_url(self):
-        return "/rozdil/%s/" % self.is_main
+        return "/rozdil/%i/" % self.id
 
     def __unicode__(self):
         return '%s' % (self.title)
@@ -36,7 +36,7 @@ class Stats(models.Model):
     """
     Загальні характеристики, відноситься до розділу
     """
-    name = models.CharField(max_length=170,verbose_name="Головний ?")
+    name = models.CharField(max_length=170,verbose_name="Імя ?")
     image = models.ImageField(upload_to='media')
     robota =  RichTextField(verbose_name="Опис роботи")
     opus_ustanovku = RichTextField(verbose_name="Опис установки")
