@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% load static from staticfiles %}
+
+{% block menu %} 
+ <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-cloud"></span> ТЗСП <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo" style="height: 0px;">
+            <ul class="nav nav-list">
+              {% for rozdils in rozdil %}
+              <li><a href="{{ rozdils.get_absolute_url}}">
+                {{rozdils.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+
+ {% endblock %}
+
+{% block name %} 
+
+ {% endblock %}
+
+{% block content %} 
+
+
+
+
+
+
+
+
+
+ {% endblock %}
