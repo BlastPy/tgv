@@ -1,7 +1,35 @@
+{% extends "index.html" %}
+
+ {%block name %}   
+ <div class="page-header">
+ <h3> {{title_rozdil.title}}</h3>  
+</div>
+{% endblock%}
+
+{% block content %}
 {% for stat in stats %}
 
-{{ stat.name }}
+
+
+<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+<div class="thumbnail">
+      <img src="{{ stat.image.url }}">
+      <div class="caption">
+        <center> <a href="{{stat.get_absolute_url}}" class="btn btn-success" role="button">{{ stat.name }}</a></center> 
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
 
 {% endfor %}
+{% endblock %}
+   
 
-{{ stats.name }}
+
+

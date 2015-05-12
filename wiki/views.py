@@ -17,6 +17,8 @@ def index(request):
 
 def stats(request,is_main):
     stats = Stats.objects.all().filter(main_is_id=is_main)
-    context = {'stats':stats}
+    rozdil = Rozdil.objects.all()
+    title_rozdil = Rozdil.objects.get(pk=is_main)
+    context = {'stats':stats,'rozdil': rozdil,'title_rozdil':title_rozdil }
 
     return render(request,'stats.html',context)

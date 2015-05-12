@@ -46,7 +46,7 @@ class Stats(models.Model):
     main_is = models.ForeignKey(Rozdil,verbose_name="З розділу")
 
     def get_absolute_url(self):
-        return "/stats/%i/" % self.id
+        return "/detali/%i/" % self.id
 
     def __unicode__(self):
         return '%s %s' % (self.name, self.main_is)
