@@ -12,7 +12,7 @@ def index(request):
     rozdil = Rozdil.objects.all()
     context = {'rozdil': rozdil } 
       
-    return render(request,'rozdils.html',context)
+    return render(request,'index.html',context)
 
 
 def all_rozdil(request,is_main):
