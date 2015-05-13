@@ -4,8 +4,8 @@ from .models import Rozdil
 from .models import Stats
 
 
-from django import forms
-from redactor.widgets import RedactorEditor
+# from django import forms
+# from redactor.widgets import RedactorEditor
 
 
 # Register your models here.
