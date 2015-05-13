@@ -2,7 +2,7 @@
 
       
 {%block name %} <div class="page-header">
- <h3> {{details.name}}</h3>  
+ <h2> {{details.name}}</h2>  
 </div>  {% endblock%}
 
 {% block content %}
@@ -13,29 +13,29 @@
 
 <div class="page-header">
  <h3> Опис роботи</h3>
-</div> {{ details.robota}} 
+</div> {{ details.robota | safe}} 
 
 
 <div class="page-header">
  <h3> Опис установки</h3>
-</div> {{ details.opus_ustanovku }} 
+</div> {{ details.opus_ustanovku | safe }} 
 
 
 
 <div class="page-header">
  <h3> Загальна будова</h3>
-</div> {{ details.zag_bund }} 
+</div> {{ details.zag_bund | safe }} 
 
 
 
 <div class="page-header">
  <h3> Тактико технічні характеристики</h3>
-</div> {{ details.tth }} 
+</div> {{ details.tth | safe }} 
 
 
 <div class="page-header">
  <h3> Технічне обслуговування</h3>
-</div> {{ details.teh_obslug }} 
+</div> {{ details.teh_obslug | safe}} 
 
 
 
