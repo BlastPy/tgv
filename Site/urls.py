@@ -9,8 +9,8 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^$', 'wiki.views.index'),
-    url(r'^rozdil/(?P<is_main>\d+)', 'wiki.views.stats'),
-    
+    url(r'^rozdil/(?P<is_main>\d+)', 'wiki.views.all_rozdil'),
+    url(r'^detali/(?P<id_ekz>\d+)', 'wiki.views.detali'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
 
