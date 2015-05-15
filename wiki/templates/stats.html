@@ -1,19 +1,19 @@
 {% extends "index.html" %}
-
+{% load staticfiles %}
  {%block name %}   
  <div class="page-header">
  <h3> {{title_rozdil.title}}</h3>  
 </div>
 {% endblock%}
 
-{% block content %}
+{% block content  %}
 {% for stat in stats %}
 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 
 <div class="thumbnail">
-      <img src="{{ stat.image.url }}">
+      <img src="{{ stat.image.url  | safe }}">
       <div class="caption">
-        <center> <a href="{{stat.get_absolute_url}}" class="btn btn-success" role="button">{{ stat.name }}</a></center> 
+        <center> <a href="{{stat.get_absolute_url | safe }}" class="btn btn-success" role="button">{{ stat.name | safe  }}</a></center> 
       </div>
     </div>
 
