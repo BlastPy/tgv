@@ -22,7 +22,7 @@ class Rozdil(models.Model):
     """
     Назва  розділу для частини , + Та головний він чи допоміжний.
     Все працює саме по собі
-    перевірка гітхабу
+    перевірка гітхаб
     """
     title = models.CharField(max_length=255,verbose_name="Назва розділу")
     part_of = models.ForeignKey(NamePart,verbose_name="В частині")
