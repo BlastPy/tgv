@@ -19,7 +19,7 @@ class NamePart(models.Model):
 
 
 class Rozdil(models.Model):
-    """ 
+    """
     Назва  розділу для частини , + Та головний він чи допоміжний.
     """
     title = models.CharField(max_length=255,verbose_name="Назва розділу")
@@ -31,6 +31,7 @@ class Rozdil(models.Model):
 
     def __unicode__(self):
         return '%s' % (self.title)
+
 
 class Stats(models.Model):
     """
@@ -50,5 +51,3 @@ class Stats(models.Model):
 
     def __unicode__(self):
         return '%s %s' % (self.name, self.main_is)
-
-
