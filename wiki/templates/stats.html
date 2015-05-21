@@ -1,27 +1,29 @@
 {% extends "index.html" %}
 {% load staticfiles %}
- {%block name %}   
- <div class="page-header">
- <h3> {{title_rozdil.title}}</h3>  
-</div>
-{% endblock%}
+{% block content %}
 
-{% block content  %}
-{% for stat in stats %}
-<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <h3> {{title_rozdil.title}}</h3>
+    <br>
 
-<div class="thumbnail">
-      <img src="{{ stat.image.url  | safe }}">
-      <div class="caption">
-        <center> <a href="{{stat.get_absolute_url | safe }}" class="btn btn-success" role="button">{{ stat.name | safe  }}</a></center> 
+    <div class="container">
+      <div class="row">
+
+            {% for stat in stats %}
+          <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+            <div class="thumbnail">
+              <img  src="{{ stat.image.url  | safe }}">
+              <div class="caption">
+                <center> <a href="{{stat.get_absolute_url | safe }}" class="btn btn-success" role="button">{{ stat.name | safe  }}</a></center>
+              </div>
+            </div>
+
+          </div>
+          {% endfor %}
       </div>
     </div>
 
 
-</div>
-{% endfor %}
-{% endblock %}
-   
 
 
-
+{% endblock%}
