@@ -6740,4 +6740,9 @@ button.close {
   .fall{
     display: block; width: 100%;
     background-color: #f1f2f6;
+    
+  }
+  .thumbnail{
+    background-color: #f1f2f6;
+    border: none;
   }
