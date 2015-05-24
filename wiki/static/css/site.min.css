@@ -130,3 +130,6 @@ body {
       .dropdown-submenu.pull-left {
           float: none;
       }
+      .fall {
+        display: block; width: 100%;
+      }

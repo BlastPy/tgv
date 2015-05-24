@@ -12,7 +12,7 @@
 {% for name_part_data in wiki_tree %}
         <div class="dropdown">
 
-            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default" data-target="#" href="">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default fall" data-target="#" href="">
               {{ name_part_data.name_part.title }} <span class="caret"></span>
             </a>
 
@@ -50,6 +50,7 @@
 
   <div class="col-md-10">
 <div class="panel-group collapsed" id="accordion1">
+    <h3>{{ details.name | safe }}</h3>
               <div class="panel">
                 <div class="panel-heading">
                   <h4 class="panel-title">
