@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
@@ -33,8 +34,25 @@ def detali(request,id_ekz):
     foo = []
     for name_part in NamePart.objects.all():
         foo.append({'name_part': name_part,'rozdils': Rozdil.objects.filter(part_of=name_part.pk)})
+
+
+# Вивід бокового меню в деталях (потрійне вкладення)
+    wiki_tree = []
+    for name_part in NamePart.objects.all():
+        rozdil_sub_tree = []
+        for rozdil in Rozdil.objects.filter(part_of=name_part.pk):
+            rozdil_sub_tree.append({
+                'rozdil': rozdil,
+                'stat_list': Stats.objects.filter(main_is=rozdil.pk)})
+
+        wiki_tree.append({
+            'name_part': name_part,
+            'rozdil_list': rozdil_sub_tree,
+        })
+
+
     details = Stats.objects.get(pk=id_ekz)
     rozdil = Rozdil.objects.all()
-    context = {'details':details,'rozdil': rozdil,'foo': foo}
+    context = {'details':details,'rozdil': rozdil,'foo': foo,'wiki_tree':wiki_tree  }
 
     return render(request,'details.html',context)

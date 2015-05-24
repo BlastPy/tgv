@@ -9,26 +9,35 @@
 
 <!-- Dropdown -->
 
-
+{% for name_part_data in wiki_tree %}
         <div class="dropdown">
-            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-inverse" data-target="#" href="">
-                Dropdown <span class="caret"></span>
+
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default" data-target="#" href="">
+              {{ name_part_data.name_part.title }} <span class="caret"></span>
             </a>
+
     		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-              <li><a href="#">Some action</a></li>
-              <li><a href="#">Some other action</a></li>
-              <li class="divider"></li>
+          {% for rozdil_data in name_part_data.rozdil_list %}
               <li class="dropdown-submenu">
-                <a tabindex="-1" href="#">Hover me for more options</a>
+
+                <a tabindex="-1" href="#">{{ rozdil_data.rozdil.title }}</a>
                 <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="#">Second level</a></li>
 
-                  <li><a href="#">Second level</a></li>
-
+                  {% for stat_data in rozdil_data.stat_list %}
+                  <li><a href="{{ stat_data.get_absolute_url }}">{{ stat_data.name }}</a></li>
+                  {% endfor%}
                 </ul>
+
               </li>
+              {% endfor%}
             </ul>
+
         </div>
+        {% endfor%}
+
+
+
+
 
 
 
